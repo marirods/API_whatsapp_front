@@ -1,0 +1,89 @@
+* {
+    padding: 0%;
+    margin: 0%;
+  
+}
+
+header{
+    display: flex;
+    max-width: 100%;
+    padding: 0.5rem;
+    background-color:#137c70;
+    align-items: center;
+    justify-content: right;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    display: flex;
+    background-color: #041614;
+    flex: 1;
+}
+
+#meusContatos{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    background-color:#137c70 ;
+    color: white;
+    gap: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    color: white;
+    font-size: 40px;
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+img{
+    width:  70px;
+    height: 70px;
+    overflow: visible;
+    border-radius: 100%;
+    color: white;
+}
+
+#conversas{
+    height: 100%;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #0d463f;
+}
+
+#pesquisar{
+ background-color: rgba(255, 255, 255, 0.1); 
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pesquisar:hover{
+background-color: rgba(255, 255, 255, 0.25);
+}
+
+
+#contato{
+ background-color: rgba(0, 0, 0, 0.5); 
+  color: white;                        
+  border: none;                     
+  padding: 8px;
+  border-radius: 10px;                 
+  outline: none;  
+  cursor: pointer;
+  
+}
