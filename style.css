@@ -87,3 +87,67 @@ background-color: rgba(255, 255, 255, 0.25);
   cursor: pointer;
   
 }
+
+.lista-conversas{
+    flex: 1;
+    overflow: auto;
+    background-color: #ffffff;
+}
+
+.vazio{
+    padding: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}
+
+
+.contato-item{
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+
+.contato-item:hover{
+    background-color: #f5f6f6;
+}
+
+.contato-item img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.conversas-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: #efeae2;
+    background-position: center;
+    position: relative;
+}
+
+.caixa-texto{
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.mensagem-input{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #f0f2f5;
+    border-top: 1px solid #ddd;
+}
+
+.mensagem-input button{
+    background-color: #128C7E;
+    color: white;
+}
