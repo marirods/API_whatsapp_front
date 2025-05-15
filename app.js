@@ -2,44 +2,68 @@
 
 //pegar dados pelos nomes sem ser id
 
+// 11987876567`
 
-async function getMeusContatos (){
-     const url=`https://giovanna-whatsapp.onrender.com/v1/whatsapp/contatos/11987876567`
+async function listarContatos (telefone){
+    const url=`https://giovanna-whatsapp.onrender.com/v1/whatsapp/contatos/${telefone}`
     const response = await fetch (url)
     const data = await response.json()
-    console.log(data)
-    return data
+    // console.log(data)
+    return data.dados_contato
 }
 
-// criar contato
-async function postContatos(contato){
 
-        const meusContatos=document.getElementById('contatos')
-        const CardNovo=document.createElement('div')
-        CardNovo.classList.add('contato')
+async function listarConversas(telefone, contato){
+    const url = `https://giovanna-whatsapp.onrender.com/v1/whatsapp/conversas?numero=${telefone}&contato=${encodeURIComponent(contato)}`
+    const response = await fetch (url)
+    const data = await response.json()
+    return data.conversas[0].conversas
+}
+
+
+// criar contato
+async function mostrarConversas(contato){
+    const telefone= document.getElementById('telefone').value
+    const mensagens= await listarConversas(telefone, contato)
+    const chat = document.getElementById('chat')
+
+    chat.replaceChildren()
+
+    mensagens.forEach(mensagem => {
+        const divMensagens = document.createElement('div')
+        divMensagens.textContent = `${mensagem.sender} ${mensagem.content} (${mensagem.time})`
+        divMensagens.classList.add(mensagem.sender === "me" ? "mensagem-enviada" : "mensagem-recebida")
+        chat.appendChild(divMensagens)
+    })
     
-        const Perfil=document.createElement('img')
-        Perfil.src=link.profile
-        NovoCard.appendChild(NovoPerfil)
-    
-        const NovaInfo=document.createElement('div')
-        NovaInfo.classList.add('info')
-        NovoCard.appendChild(NovaInfo)
-    
-        const NovoNome=document.createElement('p')
-        NovoNome.classList.add('name')
-        NovoNome.textContent=`${link.name}`
-        NovaInfo.appendChild(NovoNome)
-    
-        const NovoNumero=document.createElement('p')
-        NovoNumero.textContent=`${link.description}`
-        NovaInfo.appendChild(NovoNumero)
+}
+
+async function mostrarContatos(){
+    const telefone = document.getElementById('telefone').value
+    const contatos = await listarContatos(telefone)
+    const grid = document.getElementById('listaConversas')
+
+    grid.replaceChildren()
+
+    contatos.forEach(contato => {
+        const divContato = document.createElement('div')
+        divContato.classList.add('contato-item')
+        divContato.addEventListener('click', () => mostrarConversas(contato.name))
+
+        const img = document.createElement('img')
+        img.src = './img/user.png' 
+        img.alt = contato.name
+
+        const nome = document.createElement('span')
+        nome.textContent = contato.name
+        nome.classList.add('contato-nome')
+
+        divContato.appendChild(img)
+        divContato.appendChild(nome)
+        grid.appendChild(divContato)
+    })
+}
+
+document.getElementById('pesquisar').addEventListener('click', mostrarContatos)
         
-        NovoCard.appendChild(NovaInfo)
-        contatos.appendChild(NovoCard)
     
-        NovoCard.addEventListener('click', async function(){
-            
-            await preencherConversa(link.name)
-        })
-    }
