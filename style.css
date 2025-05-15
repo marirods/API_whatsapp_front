@@ -26,7 +26,7 @@ main{
     flex: 1;
 }
 
-#meusContatos{
+/* #meusContatos{
     height: 100%;
     width: 20%;
     display: flex;
@@ -36,7 +36,7 @@ main{
     color: white;
     gap: 0.5rem;
     font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 h2{
     color: white;
@@ -54,14 +54,14 @@ img{
     color: white;
 }
 
-#conversas{
+/* #conversas{
     height: 100%;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
     background-color: #0d463f;
-}
+} */
 
 #pesquisar{
  background-color: rgba(255, 255, 255, 0.1); 
@@ -76,8 +76,8 @@ img{
 background-color: rgba(255, 255, 255, 0.25);
 }
 
-
-/* #contato{
+/* 
+ #contato{
  background-color: rgba(0, 0, 0, 0.5); 
   color: white;                        
   border: none;                     
@@ -86,13 +86,13 @@ background-color: rgba(255, 255, 255, 0.25);
   outline: none;  
   cursor: pointer;
   
-} */
+}  */
 
-#lista-conversas{
+/* #lista-conversas{
     flex: 1;
     overflow: auto;
     background-color: #ffffff;
-}
+} */
 
 
 .vazio{
@@ -109,10 +109,11 @@ background-color: rgba(255, 255, 255, 0.25);
     padding: 14px 16px;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    color: rgba(255, 251, 251);
 }
 
 .contato-item:hover{
-    background-color: #f5f6f6;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .contato-item img{
@@ -139,6 +140,7 @@ background-color: rgba(255, 255, 255, 0.25);
     display: flex;
     flex-direction: column;
     gap: 10px;
+   
 }
 
 .mensagem-input{
@@ -148,8 +150,26 @@ background-color: rgba(255, 255, 255, 0.25);
     background-color: #f0f2f5;
     border-top: 1px solid #ddd;
 }
-
+/* 
 .mensagem-input button{
     background-color: #128C7E;
     color: white;
+} */
+
+.mensagem{
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    
+   
+}
+
+.mensagem-enviada{
+    align-self: flex-end;
+    background-color: #dcf8c6;
+}
+
+.mensagem-recebida{
+    align-self: flex-start;
+    background-color: #ffffff;
 }

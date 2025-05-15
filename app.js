@@ -23,15 +23,16 @@ async function listarConversas(telefone, contato){
 
 // criar contato
 async function mostrarConversas(contato){
-    const telefone= document.getElementById('telefone').value
+    const telefone = document.getElementById('telefone').value
     const mensagens= await listarConversas(telefone, contato)
-    const chat = document.getElementById('chat')
+    const chat = document.getElementById('texto-conversas')
 
     chat.replaceChildren()
 
     mensagens.forEach(mensagem => {
         const divMensagens = document.createElement('div')
         divMensagens.textContent = `${mensagem.sender} ${mensagem.content} (${mensagem.time})`
+        divMensagens.classList.add("mensagem")
         divMensagens.classList.add(mensagem.sender === "me" ? "mensagem-enviada" : "mensagem-recebida")
         chat.appendChild(divMensagens)
     })
@@ -48,7 +49,7 @@ async function mostrarContatos(){
     contatos.forEach(contato => {
         const divContato = document.createElement('div')
         divContato.classList.add('contato-item')
-        divContato.addEventListener('click', () => mostrarConversas(contato.name))
+        divContato.addEventListener('click', async () => await mostrarConversas(contato.name))
 
         const img = document.createElement('img')
         img.src = './img/user.png' 
