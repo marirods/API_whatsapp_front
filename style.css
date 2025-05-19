@@ -1,122 +1,107 @@
+
 * {
     padding: 0;
     margin: 0;
-  
 }
 
-header{
-    display: flex;
-    max-width: 100%;
-    padding: 0.5rem;
-    background-color:#137c70;
-    align-items: center;
-    justify-content: right;
-}
-
-body{
+body {
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 
-main{
+
+header {
     display: flex;
-    background-color: #041614;
-    flex: 1;
+    max-width: 100%;
+    padding: 0.5rem;
+    background-color: #137c70;
+    align-items: center;
+    justify-content: right;
 }
 
-/* #meusContatos{
-    height: 100%;
-    width: 20%;
-    display: flex;
-    padding: 1rem;
-    flex-direction: column;
-    background-color:#137c70 ;
-    color: white;
-    gap: 0.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-} */
-
-h2{
-    color: white;
-    font-size: 40px;
-    font-family: "Inria Serif", serif;
-    font-weight: bold;
-    font-style: normal;
-}
-
-img{
-    width:  70px;
-    height: 70px;
+img {
+    width: 80px;
+    height: 80px;
     overflow: visible;
     border-radius: 100%;
-    color: white;
+    padding-right: 12px;
 }
 
-/* #conversas{
-    height: 100%;
+
+main {
     display: flex;
     flex: 1;
+    background-color: #042b26;
+    /* flex-direction: column; */
+}
+
+
+#meusContatos {
+     /* width: 20%; */
+    /* height: 100%; */
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: #0d463f;
+    padding: 1rem;
+    background-color: #042b26;
+    color: white;
+    gap: 1rem;
+    font-family: "Inria Serif", serif;
+}
+
+
+/* #telefone, #pesquisar {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#telefone + #pesquisar {
+    display: inline-block;
 } */
 
-#pesquisar{
- background-color: rgba(255, 255, 255, 0.1); 
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#pesquisar:hover{
-background-color: rgba(255, 255, 255, 0.25);
-}
-
-/* 
- #contato{
- background-color: rgba(0, 0, 0, 0.5); 
-  color: white;                        
-  border: none;                     
-  padding: 8px;
-  border-radius: 10px;                 
-  outline: none;  
-  cursor: pointer;
-  
-}  */
-
-/* #lista-conversas{
-    flex: 1;
-    overflow: auto;
-    background-color: #ffffff;
-} */
+ #telefone {
+    /* width: calc(100% - 120px); */
+    padding:  8px 5px;
+    border-radius: 8px;
+    border: none;
+ 
+    font-size: 12px;
+} 
 
 
-.vazio{
-    padding: 20px;
-    text-align: center;
-    color: #888;
-    font-size: 16px;
-}
-
-
-.contato-item{
-    display: flex;
-    align-items: center;
-    padding: 14px 16px;
+#pesquisar {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 5px;
+    /* width: 8vw; */
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    color: rgba(255, 251, 251);
+    transition: background-color 0.3s ease;
 }
 
-.contato-item:hover{
+#pesquisar:hover {
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-.contato-item img{
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    /* color: white;
+    border-radius: 12px; */
+}
+
+.contato-item:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.contato-item img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -124,52 +109,91 @@ background-color: rgba(255, 255, 255, 0.25);
     margin-right: 12px;
 }
 
-.conversas-container{
-    width: 70%;
+
+.conversas-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: #efeae2;
-    background-position: center;
     position: relative;
 }
 
-.caixa-texto{
+.caixa-texto {
     flex: 1;
     padding: 24px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
-   
 }
 
-.mensagem-input{
+
+.mensagem-input {
     display: flex;
     align-items: center;
     padding: 12px;
     background-color: #f0f2f5;
     border-top: 1px solid #ddd;
 }
-/* 
-.mensagem-input button{
+
+.mensagem-input input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    margin-right: 10px;
+    background-color: white;
+  }
+
+.mensagem-input button {
     background-color: #128C7E;
     color: white;
-} */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-.mensagem{
+.message-input button:hover {
+  background-color: #25D366;
+}
+
+
+
+.mensagem {
     max-width: 60%;
     padding: 10px;
     border-radius: 10px;
-    
-   
 }
 
-.mensagem-enviada{
+.mensagem-enviada {
     align-self: flex-end;
     background-color: #dcf8c6;
 }
 
-.mensagem-recebida{
+.mensagem-recebida {
     align-self: flex-start;
     background-color: #ffffff;
+}
+
+/* Campo com ícone */
+.icon {
+    padding-left: 25px;
+    background: url("./img/userr.png") no-repeat left;
+    background-size: 1.5rem;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+/* Título */
+h2 {
+    color: white;
+    font-size: 40px;
+    font-family: "Inria Serif", serif;
+    font-weight: bold;
 }
